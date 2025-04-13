@@ -11,3 +11,8 @@ jobs:
     with:
       keyboard_toml_path: "keyboard.toml"
       vial_json_path: "vial.json"
+  build-velvet:
+    uses: haobogu/rmk/.github/workflows/user_build.yml@main
+    with:
+      keyboard_toml_path: "velvet/keyboard.toml"
+      vial_json_path: "velvet/vial.json"

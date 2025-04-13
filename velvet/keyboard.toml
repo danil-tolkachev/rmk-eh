@@ -1,0 +1,95 @@
+# Documentation: https://haobogu.github.io/rmk/keyboard_configuration.html
+[keyboard]
+name = "Velvet v3"
+product_name = "Velvet v3"
+vendor_id = 0x4c4b
+product_id = 0x4643
+manufacturer = "Ergohaven"
+chip = "nrf52840"
+# usb_enable = true
+
+[layout]
+rows = 4
+cols = 12
+layers = 16
+keymap = [
+    [
+        ["Esc", "Q", "W", "E", "R", "T",                                               "Y", "U", "I", "O", "P", "Backspace",],
+        ["Tab", "A", "S", "D", "F", "G",                                       "H", "J", "K", "L", "Semicolon", "Backslash",],
+        ["LShift", "Z", "X", "C", "V", "B",                                      "N", "M", "Comma", "Dot", "RAlt", "RShift",],
+        ["_", "Space", "Grave", "LGui", "LCtrl", "MO(1)",     "MO(2)", "RCtrl", "LeftBracket", "RightBracket", "Enter", "_",],
+    ],
+    [
+        ["_", "_", "_", "_", "_", "_",                                                         "_", "_", "_", "_", "_", "_",],
+        ["_", "Kc1", "Kc2", "Kc3", "Kc4", "Kc5",                                     "Kc6", "Kc7", "Kc8", "Kc9", "Kc0", "_",],
+        ["_", "_", "_", "_", "_", "_",                                                         "_", "_", "_", "_", "_", "_",],
+        ["_", "_", "_", "_", "_", "_",                                                     "_", "MO(3)", "_", "_", "_", "_",],
+    ],
+    [
+        ["_", "_", "_", "_", "_", "_",                                                         "_", "_", "_", "_", "_", "_",],
+        ["_", "_", "_", "_", "_", "_",                                                   "_", "Kc1", "Kc2", "Kc3", "_", "_",],
+        ["_", "_", "_", "_", "_", "_",                                                         "_", "_", "_", "_", "_", "_",],
+        ["_", "_", "_", "_", "_", "MO(3)",                                                     "_", "_", "_", "_", "_", "_",],
+    ],
+    [
+        ["_", "_", "_", "_", "_", "_",                                                         "_", "_", "_", "_", "_", "_",],
+        ["_", "_", "_", "_", "_", "_",                                                         "_", "_", "_", "_", "_", "_",],
+        ["_", "_", "_", "_", "_", "_",                                                         "_", "_", "_", "_", "_", "_",],
+        ["_", "_", "_", "_", "_", "_",                                                         "_", "_", "_", "_", "_", "_",],
+    ],
+]
+
+[storage]
+# Storage feature is enabled by default
+enabled = true
+# Start address of local storage, MUST BE start of a sector.
+# If start_addr is set to 0(this is the default value), the last `num_sectors` sectors will be used.
+start_addr = 0x00000000
+# How many sectors are used for storage, the default value is 2
+num_sectors = 2
+# Clear storage at keyboard boot. 
+# Set it to true will reset the storage(including keymap, BLE bond info, etc.) at each reboot.
+# This option is useful when testing the firmware.
+#clear_storage = true
+
+[ble]
+enabled = true
+
+[behavior]
+tap_hold = { enable_hrm = true, prior_idle_time = "120ms", hold_timeout = "250ms", post_wait_time = "50ms"}
+
+[behavior.combo]
+timeout = "150ms"
+combos = [
+  # Press J and K keys simultaneously to output Escape key
+  # { actions = ["J", "K"], output = "Escape" }
+]
+
+[split]
+connection = "ble"
+
+[split.central]
+rows = 4
+cols = 6
+row_offset = 0
+col_offset = 0
+ble_addr = [0x18, 0xe2, 0x21, 0x80, 0xc0, 0xc7]
+
+[split.central.matrix]
+matrix_type = "normal"
+# WARNING: Currently row2col/col2row is set in RMK's feature gate, row2col config here is valid ONLY when you're using cloud compilation
+# row2col = true
+input_pins = ["P0_30", "P0_10", "P0_09", "P0_24"]
+output_pins = ["P0_02", "P1_13", "P0_28", "P0_03", "P1_10", "P1_11"]
+
+[[split.peripheral]]
+rows = 4
+cols = 6
+row_offset = 0
+col_offset = 6
+ble_addr = [0x7e, 0xfe, 0x73, 0x9e, 0x66, 0xe3]
+
+[split.peripheral.matrix]
+matrix_type = "normal"
+input_pins = ["P1_13", "P0_02", "P0_29", "P0_30"]
+output_pins = ["P0_24", "P0_09", "P0_10", "P1_11", "P1_10", "P0_03"]

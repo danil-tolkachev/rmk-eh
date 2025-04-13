@@ -1,0 +1,85 @@
+{
+    "name": "Velvet",
+    "vendorId": "0x4C4B",
+    "productId": "0x4643",
+    "lighting": "none",
+    "matrix": {
+        "rows": 8,
+        "cols": 6
+    },
+    "customKeycodes": [
+        {
+            "name": "BT0",
+            "title": "Bluetooth Channel 0",
+            "shortName": "BT0"
+        },
+        {
+            "name": "BT1",
+            "title": "Bluetooth Channel 1",
+            "shortName": "BT1"
+        },
+        {
+            "name": "BT2",
+            "title": "Bluetooth Channel 2",
+            "shortName": "BT2"
+        },
+        {
+            "name": "BT3",
+            "title": "Bluetooth Channel 3",
+            "shortName": "BT3"
+        },
+        {
+            "name": "BT4",
+            "title": "Bluetooth Channel 4",
+            "shortName": "BT4"
+        },
+        {
+            "name": "BT5",
+            "title": "Bluetooth Channel 5",
+            "shortName": "BT5"
+        },
+        {
+            "name": "BT6",
+            "title": "Bluetooth Channel 6",
+            "shortName": "BT6"
+        },
+        {
+            "name": "BT7",
+            "title": "Bluetooth Channel 7",
+            "shortName": "BT7"
+        },
+        {
+            "name": "NEXT_BT",
+            "title": "Switch to the next Bluetooth channel",
+            "shortName": "Next\nBT"
+        },
+        {
+            "name": "PREV_BT",
+            "title": "Switch to the previous Bluetooth channel",
+            "shortName": "Prev\nBT"
+        },
+        {
+            "name": "CLR_BT",
+            "title": "Clear bond info for current channel",
+            "shortName": "Clear\nBT"
+        },
+        {
+            "name": "SWITCH",
+            "title": "Switch default output mode between USB/BLE",
+            "shortName": "Switch\nOutput"
+        }
+    ],
+  "layouts": {
+    "keymap": [
+        [{"rx":1,"y":0.4},"0,0","0,1",{"y":-0.45},"0,2",{"y":-0.1},"0,3",{"y":0.1},"0,4",{"y":0.15},"0,5"],
+        [{"y":0.3},"2,0","2,1",{"y":-0.45},"2,2",{"y":-0.1},"2,3",{"y":0.1},"2,4",{"y":0.15},"2,5"],
+        [{"y":0.3},"4,0","4,1",{"y":-0.45},"4,2",{"y":-0.1},"4,3",{"y":0.1},"4,4",{"y":0.15},"4,5"],
+        [{"x":2,"y":-0.15},"6,2",{"y":-0.1},"6,3",{"y":0.1},"6,4",{"y":0.15},"6,5","6,1"],
+
+        [{"r":0,"rx":12,"ry":0.1},"1,0",{"y":-0.15},"1,1",{"y":-0.1},"1,2",{"y":0.1},"1,3",{"y":0.45},"1,4","1,5"],
+        [{"y":-0.3},"3,0",{"y":-0.15},"3,1",{"y":-0.1},"3,2",{"y":0.1},"3,3",{"y":0.45},"3,4","3,5"],
+        [{"y":-0.3},"5,0",{"y":-0.15},"5,1",{"y":-0.1},"5,2",{"y":0.1},"5,3",{"y":0.45},"5,4","5,5"],
+        [{"x":-1,"y":-0.3},"7,0","7,1",{"y":-0.15},"7,2",{"y":-0.1},"7,3",{"y":0.1},"7,4",{"y":0.45}]
+   ]
+  }
+}
